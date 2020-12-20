@@ -1,6 +1,8 @@
 # Use the httpd-parent image as base . Modificado v100
 FROM quay.io/redhattraining/http-parent
 
+COPY ./src/ /var/www/html/
+
 EXPOSE 8080
 
 RUN sed -i "s\Listen 80\Listen 8080\g" /etc/httpd/conf/httpd.conf && \
